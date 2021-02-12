@@ -36,15 +36,24 @@ class BrBaTestTests: XCTestCase {
     
     func testHasExpectedTitle() {
         let actualTitle = vc.titleLabel.text
-        
         XCTAssertEqual(expectedTitle, actualTitle)
+    }
+    
+    func testListShowsCorrectText() {
+        let numberOfStrings = expectedStringArray.count
+        let raw = Int.random(in: 0..<numberOfStrings)
+        let tableView = vc.listTableView
+        let cell = tableView?.cellForRow(at: IndexPath(row: raw, section: 0))
+        let cellString = cell?.textLabel?.text
+        
+        XCTAssertEqual(cellString, expectedStringArray[raw])
     }
     
     
     
     private func randomStringList() -> [String] {
         var array: [String] = []
-        for i in 0...Int.random(in: 0...100) {
+        for i in 0...Int.random(in: 0...10) {
             array.append("\(i) \(Date().timeIntervalSince1970)")
         }
         return array
@@ -56,6 +65,7 @@ extension UIViewController {
     func displayOnScreen() {
         let window = UIApplication.shared.windows.filter {$0.isKeyWindow}.first!
         window.rootViewController = self
+//        XCTWaiter().wait(for: [XCTestExpectation()], timeout: 1)
     }
 }
 

@@ -18,6 +18,7 @@ class ListViewController: UIViewController {
         super.viewDidLoad()
         titleLabel.text = viewModel?.getTitle() ?? ""
         listTableView.dataSource = self
+        listTableView.tableFooterView = UIView()
     }
 
 
@@ -32,6 +33,7 @@ extension ListViewController: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
+        cell.textLabel?.text = viewModel?.getLabelTextFor(indexPath.row) ?? ""
         return cell
     }
     
