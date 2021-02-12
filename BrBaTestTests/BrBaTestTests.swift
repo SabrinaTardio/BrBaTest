@@ -49,6 +49,15 @@ class BrBaTestTests: XCTestCase {
         XCTAssertEqual(cellString, expectedStringArray[raw])
     }
     
+    func testWhenElementSelectedCallsDidSelectRow() {
+        let numberOfStrings = expectedStringArray.count
+        let expectedSelectedRaw = Int.random(in: 0..<numberOfStrings)
+        let tableView = vc.listTableView!
+        vc.tableView(tableView, didSelectRowAt: IndexPath(row: expectedSelectedRaw, section: 0))
+
+        XCTAssertEqual(vm.selectedRaw, expectedSelectedRaw)
+    }
+    
     
     
     private func randomStringList() -> [String] {
@@ -75,6 +84,7 @@ extension UIViewController {
 class MockListViewModel: ListViewModel {
     let stringList: [String]
     let title: String
+    var selectedRaw: Int?
     
     init(stringList: [String] = [], title: String = "") {
         self.stringList = stringList
@@ -90,7 +100,7 @@ class MockListViewModel: ListViewModel {
     }
     
     func didSelectRow(_ index: Int) {
-        
+        self.selectedRaw = index
     }
     
     func getTitle() -> String {
