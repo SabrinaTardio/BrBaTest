@@ -10,24 +10,88 @@ import XCTest
 
 class BrBaTestTests: XCTestCase {
 
-    override func setUpWithError() throws {
-        // Put setup code here. This method is called before the invocation of each test method in the class.
+    var vc: ListViewController!
+    var vm: MockListViewModel!
+    let expectedTitle = "someTitle \(Date().timeIntervalSince1970)"
+    var expectedStringArray: [String]!
+    
+    override func setUp() {
+        expectedStringArray = randomStringList()
+        vm = MockListViewModel(stringList: expectedStringArray, title: expectedTitle)
+        vc = ListViewControllersFactory().makeListViewController(fruitListViewModel: vm) as? ListViewController
+        vc.viewModel = vm
+        vc.displayOnScreen()
     }
 
-    override func tearDownWithError() throws {
-        // Put teardown code here. This method is called after the invocation of each test method in the class.
+    override func tearDown() {
+        vc = nil
+        vm = nil
     }
-
-    func testExample() throws {
-        // This is an example of a functional test case.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
+    
+    func testTableViewHasOneSection() {
+        let expectedSectionCount = 1
+        let actualSectionCount = vc.listTableView.numberOfSections
+        XCTAssertEqual(expectedSectionCount, actualSectionCount)
     }
-
-    func testPerformanceExample() throws {
-        // This is an example of a performance test case.
-        self.measure {
-            // Put the code you want to measure the time of here.
+    
+    func testHasExpectedTitle() {
+        let actualTitle = vc.titleLabel.text
+        
+        XCTAssertEqual(expectedTitle, actualTitle)
+    }
+    
+    
+    
+    private func randomStringList() -> [String] {
+        var array: [String] = []
+        for i in 0...Int.random(in: 0...100) {
+            array.append("\(i) \(Date().timeIntervalSince1970)")
         }
+        return array
     }
 
 }
+
+extension UIViewController {
+    func displayOnScreen() {
+        let window = UIApplication.shared.windows.filter {$0.isKeyWindow}.first!
+        window.rootViewController = self
+    }
+}
+
+
+
+
+class MockListViewModel: ListViewModel {
+    let stringList: [String]
+    let title: String
+    
+    init(stringList: [String] = [], title: String = "") {
+        self.stringList = stringList
+        self.title = title
+    }
+    
+    func getNumberOfRows() -> Int {
+        return stringList.count
+    }
+    
+    func getLabelTextFor(_ index: Int) -> String {
+        return stringList[index]
+    }
+    
+    func didSelectRow(_ index: Int) {
+        
+    }
+    
+    func getTitle() -> String {
+        return title
+    }
+    
+
+}
+
+
+
+
+
+
