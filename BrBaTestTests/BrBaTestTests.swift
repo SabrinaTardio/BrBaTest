@@ -58,6 +58,21 @@ class BrBaTestTests: XCTestCase {
         XCTAssertEqual(vm.selectedRaw, expectedSelectedRaw)
     }
     
+    func testCanUpdateTableView() {
+        let updatedStringList = randomStringList()
+        vm.stringList = updatedStringList
+        vm.delegate?.updateUI()
+        XCTWaiter().wait(for: [XCTestExpectation()], timeout: 2)
+
+        let tableView = vc.listTableView
+        let tableViewCellNumber = tableView?.numberOfRows(inSection: 0)
+        let randomRaw = Int.random(in: 0..<updatedStringList.count)
+        let cell = tableView?.cellForRow(at: IndexPath(row: randomRaw, section: 0))
+        let cellString = cell?.textLabel?.text
+        XCTAssertEqual(tableViewCellNumber, updatedStringList.count)
+        XCTAssertEqual(cellString, updatedStringList[randomRaw])
+    }
+    
     
     
     private func randomStringList() -> [String] {
@@ -74,15 +89,17 @@ extension UIViewController {
     func displayOnScreen() {
         let window = UIApplication.shared.windows.filter {$0.isKeyWindow}.first!
         window.rootViewController = self
-//        XCTWaiter().wait(for: [XCTestExpectation()], timeout: 1)
+        XCTWaiter().wait(for: [XCTestExpectation()], timeout: 1)
     }
 }
 
 
 
 
-class MockListViewModel: ListViewModel {
-    let stringList: [String]
+class MockListViewModel: ListViewModel {    
+    var delegate: ListViewModelDelegate?
+    
+    var stringList: [String]
     let title: String
     var selectedRaw: Int?
     
@@ -107,11 +124,7 @@ class MockListViewModel: ListViewModel {
         return title
     }
     
-
 }
-
-
-
 
 
 

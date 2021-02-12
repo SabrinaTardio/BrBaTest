@@ -7,9 +7,16 @@
 
 import Foundation
 
-protocol ListViewModel {
+protocol ListViewModel: class {
+    var delegate: ListViewModelDelegate? {get set}
+    
     func getTitle() -> String
     func getNumberOfRows() -> Int
     func getLabelTextFor(_ index: Int) -> String
     func didSelectRow(_ index: Int)
+}
+
+
+protocol ListViewModelDelegate: class {
+    func updateUI()
 }

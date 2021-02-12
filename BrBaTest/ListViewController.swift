@@ -16,13 +16,13 @@ class ListViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        viewModel?.delegate = self
         titleLabel.text = viewModel?.getTitle() ?? ""
         listTableView.dataSource = self
         listTableView.delegate = self
         listTableView.tableFooterView = UIView()
     }
-
-
+    
 }
 
 
@@ -43,5 +43,12 @@ extension ListViewController: UITableViewDataSource {
 extension ListViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         viewModel?.didSelectRow(indexPath.row)
+    }
+}
+
+
+extension ListViewController: ListViewModelDelegate {
+    func updateUI() {
+        listTableView.reloadData()
     }
 }
