@@ -17,7 +17,7 @@ class DetailViewControllerTests: XCTestCase {
     let expectedDetail3 = "some detail 3 \(Date())"
     let expectedDetail4 = "some detail 4 \(Date())"
     let expectedDetail5 = "some detail 5 \(Date())"
-    let expectedurl = "some URL"
+    let expectedurl = "https://images.amcnetworks.com/amc.com/wp-content/uploads/2015/04/cast_bb_700x1000_walter-white-lg.jpg"
 
     override func setUp() {
         vm = MockDetailViewModel(detail1: expectedDetail1, detail2: expectedDetail2, detail3: expectedDetail3, detail4: expectedDetail4, detail5: expectedDetail5, imgURL: expectedurl)
@@ -57,41 +57,31 @@ class DetailViewControllerTests: XCTestCase {
         XCTAssertEqual(expectedDetail5, actualdetail5)
     }
     
-//
-//    func testShowsCorrectDetail2() {
-//        let actualdetail2 = vc.detail2Lable.text
-//        XCTAssertEqual(expectedDetail2, actualdetail2)
-//    }
-//
-//    func testTellsObserverWhenScreenIsDisplayed() {
-//        let expectation = XCTestExpectation()
-//        let observer = CapturingScreenObserver(screenDisplayedExpectation: expectation)
-//        vc.screenObserver = observer
-//        vc.displayOnScreen()
-//        XCTWaiter().wait(for: [expectation], timeout: 3)
-//        XCTAssertEqual(vc, observer.caprutedVC)
-//    }
-//
-//    func testTellsObserverWhenLeavingScreen() {
-//        let expectation = XCTestExpectation()
-//        let observer = CapturingScreenObserver(screenLeftExpectation: expectation)
-//        vc.screenObserver = observer
-//        vc.dismiss(animated: true, completion: nil)
-//
-//        XCTWaiter().wait(for: [expectation], timeout: 3)
-//        XCTAssertEqual(vc, observer.caprutedVC)
-//    }
-
+    func testUploadImage() {
+        //ToDo
+    }
+    
+    func testCanUpdateView() {
+        let updatedLabel3 = "NEWLABEL"
+        vm.detail3 = updatedLabel3
+        vc.viewModel?.delegateView?.updateUI()
+        XCTWaiter().wait(for: [XCTestExpectation()], timeout: 2)
+        let actualdetail3 = vc.label3.text
+        
+        XCTAssertEqual(updatedLabel3, actualdetail3)
+    }
+    
 }
 
 
 
 
 class MockDetailViewModel: DetailViewModel  {
+    var delegateView: ViewModelDelegateView?
     
     let detail1: String
     let detail2: String
-    let detail3: String
+    var detail3: String
     let detail4: String
     let detail5: String
     let imgURL: String

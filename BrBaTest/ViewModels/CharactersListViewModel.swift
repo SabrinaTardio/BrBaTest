@@ -9,7 +9,7 @@ import Foundation
 
 class CharactersListViewModel: ListViewModel {
     
-    weak var delegateView: ListViewModelDelegateView?
+    weak var delegateView: ViewModelDelegateView?
     let charactersManager: CharactersManager
     weak var delegateCoordinator: ListViewModelDelegateCoordinator?
     var characters: [Character] = []

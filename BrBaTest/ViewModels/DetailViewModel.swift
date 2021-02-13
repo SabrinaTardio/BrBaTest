@@ -8,6 +8,8 @@
 import Foundation
 
 protocol DetailViewModel {
+    var delegateView: ViewModelDelegateView? {get set}
+    
     func getDetail1Text() -> String
     func getDetail2Text() -> String
     func getDetail3Text() -> String
@@ -15,3 +17,4 @@ protocol DetailViewModel {
     func getDetail5Text() -> String
     func getImageUrlString() -> String
 }
+

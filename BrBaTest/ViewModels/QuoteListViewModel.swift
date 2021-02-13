@@ -10,7 +10,7 @@ import Foundation
 
 class QuotesListViewModel: ListViewModel {
     
-    weak var delegateView: ListViewModelDelegateView?
+    weak var delegateView: ViewModelDelegateView?
     let quotesManager: QuotesManager
     weak var delegateCoordinator: ListViewModelDelegateCoordinator?
     var quotes: [Quote] = []

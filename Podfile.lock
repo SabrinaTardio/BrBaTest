@@ -2,17 +2,23 @@ PODS:
   - GCDWebServer (3.5.4):
     - GCDWebServer/Core (= 3.5.4)
   - GCDWebServer/Core (3.5.4)
+  - SDWebImage (4.4.1):
+    - SDWebImage/Core (= 4.4.1)
+  - SDWebImage/Core (4.4.1)
 
 DEPENDENCIES:
   - GCDWebServer (~> 3.0)
+  - SDWebImage (= 4.4.1)
 
 SPEC REPOS:
   trunk:
     - GCDWebServer
+    - SDWebImage
 
 SPEC CHECKSUMS:
   GCDWebServer: 2c156a56c8226e2d5c0c3f208a3621ccffbe3ce4
+  SDWebImage: 47e9b5b925cbce75946c23f0c42dd19464189af4
 
-PODFILE CHECKSUM: 1f10915eff8c564d72e1d8c3bfd72d8fad6cb392
+PODFILE CHECKSUM: 3bb47b6cb9457844793ec9df2adde2fb68c3ec06
 
 COCOAPODS: 1.9.1

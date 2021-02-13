@@ -8,7 +8,7 @@
 import Foundation
 @testable import BrBaTest
 
-class CaptuiringVMDelegate: ListViewModelDelegateView {
+class CaptuiringVMDelegate: ViewModelDelegateView {
     var updateUICalled = false
     func updateUI() {
         updateUICalled = true

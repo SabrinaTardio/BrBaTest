@@ -8,7 +8,7 @@
 import Foundation
 
 protocol ListViewModel: class {
-    var delegateView: ListViewModelDelegateView? {get set}
+    var delegateView: ViewModelDelegateView? {get set}
     var delegateCoordinator: ListViewModelDelegateCoordinator? {get set}
     
     func getTitle() -> String
@@ -18,7 +18,7 @@ protocol ListViewModel: class {
 }
 
 
-protocol ListViewModelDelegateView: class {
+protocol ViewModelDelegateView: class {
     func updateUI()
 }
 

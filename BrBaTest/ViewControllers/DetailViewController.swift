@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import SDWebImage
 
 class DetailViewController: UIViewController {
     
@@ -21,6 +22,7 @@ class DetailViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        viewModel?.delegateView = self
         updateLabelsAndImage()
     }
     
@@ -30,10 +32,15 @@ class DetailViewController: UIViewController {
         label3.text = viewModel?.getDetail3Text() ?? ""
         label4.text = viewModel?.getDetail4Text() ?? ""
         label5.text = viewModel?.getDetail5Text() ?? ""
-
+        if let url = URL(string: viewModel?.getImageUrlString() ?? "") {
+            featureImageView.sd_setImage(with: url)
+        }
     }
     
+}
 
-
-
+extension DetailViewController: ViewModelDelegateView {
+    func updateUI() {
+        self.updateLabelsAndImage()
+    }
 }

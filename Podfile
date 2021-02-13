@@ -5,7 +5,7 @@ target 'BrBaTest' do
 
   use_frameworks!
 
-  # Pods for BrBaTest
+   pod 'SDWebImage', '4.4.1'
 
   target 'BrBaTestTests' do
     pod "GCDWebServer", "~> 3.0"

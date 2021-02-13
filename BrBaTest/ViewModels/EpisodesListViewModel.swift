@@ -9,7 +9,7 @@ import Foundation
 
 class EpisodesListViewModel: ListViewModel {
     
-    weak var delegateView: ListViewModelDelegateView?
+    weak var delegateView: ViewModelDelegateView?
     let episodesManager: EpisodesManager
     weak var delegateCoordinator: ListViewModelDelegateCoordinator?
     var episodes: [Episode] = []

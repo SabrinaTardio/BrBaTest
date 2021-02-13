@@ -47,7 +47,7 @@ extension ListViewController: UITableViewDelegate {
 }
 
 
-extension ListViewController: ListViewModelDelegateView {
+extension ListViewController: ViewModelDelegateView {
     func updateUI() {
         listTableView.reloadData()
     }

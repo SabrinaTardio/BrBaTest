@@ -58,7 +58,7 @@ class EpisodsListViewModelTests: XCTestCase {
     }
 
     func testDelegateViewIsNotRetained() {
-        var delegate: ListViewModelDelegateView? = CaptuiringVMDelegate()
+        var delegate: ViewModelDelegateView? = CaptuiringVMDelegate()
         weak var weakDelegate = delegate
         vm.delegateView = delegate
         delegate = nil
