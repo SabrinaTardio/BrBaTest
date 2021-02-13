@@ -35,7 +35,6 @@ class CharactersManagerTests: XCTestCase {
         
         mockNetworking = CapturingNetworkingClient(response: NetworkingResult.success(jsonData))
         charactersManager = RemoteCharactersManager(networking: mockNetworking, url: expectedURL)
-//        mockNetworking.performCompletion()
         charactersManager.fetchCharacters { (characters) in
             actualCharacters = characters
         }
@@ -43,7 +42,34 @@ class CharactersManagerTests: XCTestCase {
         
         XCTAssertEqual(expectedCharacters, actualCharacters)
     }
+    
+    func testWhenNetworkRequestFails_ReturnsEmptyCharactersArray() {
+        let expectedCharacters: [Character] = []
+        mockNetworking = CapturingNetworkingClient(response: .failure(NSError()))
+        charactersManager = RemoteCharactersManager(networking: mockNetworking, url: expectedURL)
+        var actualCharacters: [Character]?
 
+        charactersManager.fetchCharacters { (characters) in
+            actualCharacters = characters
+        }
+        
+        XCTAssertEqual(expectedCharacters, actualCharacters)
+    }
+    
+    func testWhenParsingFails_ReturnsEmptyCharactersArray() {
+        let jsonString = "{some invalid json}"
+        let jsonData = jsonString.data(using: .utf8)!
+        let expectedCharacters: [Character] = []
+        var actualCharacters: [Character]?
+
+        mockNetworking = CapturingNetworkingClient(response: .success(jsonData))
+        charactersManager = RemoteCharactersManager(networking: mockNetworking, url: expectedURL)
+        charactersManager.fetchCharacters { (characters) in
+            actualCharacters = characters
+        }
+        
+        XCTAssertEqual(expectedCharacters, actualCharacters)
+    }
 }
 
 
@@ -64,20 +90,15 @@ class CapturingNetworkingClient: Networking {
     
     func get(_ url: URL, completion: @escaping (Result<Data, Error>) -> ()) {
         self.capturedURLString = url.absoluteString
-//        self.completion = completion
         completion(response)
     }
-    
-//    func performCompletion() {
-//        completion!(response)
-//    }
 }
 
 class RemoteCharactersManager: CharactersManager {
     let networking: Networking
     let url: URL
     
-    init(networking: Networking, url: URL) {
+    init(networking: Networking, url: URL = URL(string: "https://www.breakingbadapi.com/api/characters")!) {
         self.networking = networking
         self.url = url
     }
@@ -88,7 +109,7 @@ class RemoteCharactersManager: CharactersManager {
             case .success(let data):
                 completion(self.decodeToCharacters(data: data))
             case .failure(_):
-                print("error")
+                completion([Character]())
             }
         }
     }
