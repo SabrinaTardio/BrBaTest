@@ -12,7 +12,7 @@ class ListViewController: UIViewController {
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var listTableView: UITableView!
     
-    var viewModel: ListViewModel?
+    var viewModel: ListViewModel? 
     
     override func viewDidLoad() {
         super.viewDidLoad()

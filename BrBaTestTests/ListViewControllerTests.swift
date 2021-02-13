@@ -12,7 +12,7 @@ class ListViewControllerTests: XCTestCase {
 
     var vc: ListViewController!
     var vm: MockListViewModel!
-    let expectedTitle = "someTitle \(Date().timeIntervalSince1970)"
+    let expectedTitle = "someTitle \(Int.random(in: 1...10))"
     var expectedStringArray: [String]!
     
     override func setUp() {
@@ -61,7 +61,7 @@ class ListViewControllerTests: XCTestCase {
     func testCanUpdateTableView() {
         let updatedStringList = randomStringList()
         vm.stringList = updatedStringList
-        vm.delegate?.updateUI()
+        vc.viewModel?.delegateView?.updateUI()
         XCTWaiter().wait(for: [XCTestExpectation()], timeout: 2)
 
         let tableView = vc.listTableView
@@ -78,7 +78,7 @@ class ListViewControllerTests: XCTestCase {
     private func randomStringList() -> [String] {
         var array: [String] = []
         for i in 0...Int.random(in: 0...10) {
-            array.append("\(i) \(Date().timeIntervalSince1970)")
+            array.append("\(i) \(Int.random(in: 1...18))")
         }
         return array
     }
@@ -89,7 +89,7 @@ extension UIViewController {
     func displayOnScreen() {
         let window = UIApplication.shared.windows.filter {$0.isKeyWindow}.first!
         window.rootViewController = self
-        XCTWaiter().wait(for: [XCTestExpectation()], timeout: 2)
+        XCTWaiter().wait(for: [XCTestExpectation()], timeout: 5)
     }
 }
 

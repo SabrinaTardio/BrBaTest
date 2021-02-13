@@ -9,7 +9,7 @@ import Foundation
 @testable import BrBaTest
 
 class MockListViewModel: ListViewModel {
-    var delegateView: ListViewModelDelegateView?
+    weak var delegateView: ListViewModelDelegateView?
     
     var delegateCoordinator: ListViewModelDelegateCoordinator?
     
