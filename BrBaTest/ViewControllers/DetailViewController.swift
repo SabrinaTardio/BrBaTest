@@ -22,7 +22,6 @@ class DetailViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        viewModel?.delegateView = self
         updateLabelsAndImage()
     }
     
@@ -39,8 +38,4 @@ class DetailViewController: UIViewController {
     
 }
 
-extension DetailViewController: ViewModelDelegateView {
-    func updateUI() {
-        self.updateLabelsAndImage()
-    }
-}
+

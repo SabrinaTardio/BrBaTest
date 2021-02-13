@@ -61,24 +61,12 @@ class DetailViewControllerTests: XCTestCase {
         //ToDo
     }
     
-    func testCanUpdateView() {
-        let updatedLabel3 = "NEWLABEL"
-        vm.detail3 = updatedLabel3
-        vc.viewModel?.delegateView?.updateUI()
-        XCTWaiter().wait(for: [XCTestExpectation()], timeout: 2)
-        let actualdetail3 = vc.label3.text
-        
-        XCTAssertEqual(updatedLabel3, actualdetail3)
-    }
-    
 }
 
 
 
 
 class MockDetailViewModel: DetailViewModel  {
-    var delegateView: ViewModelDelegateView?
-    
     let detail1: String
     let detail2: String
     var detail3: String
