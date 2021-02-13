@@ -16,7 +16,7 @@ class ListViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        viewModel?.delegate = self
+        viewModel?.delegateView = self
         titleLabel.text = viewModel?.getTitle() ?? ""
         listTableView.dataSource = self
         listTableView.delegate = self
@@ -47,7 +47,7 @@ extension ListViewController: UITableViewDelegate {
 }
 
 
-extension ListViewController: ListViewModelDelegate {
+extension ListViewController: ListViewModelDelegateView {
     func updateUI() {
         listTableView.reloadData()
     }

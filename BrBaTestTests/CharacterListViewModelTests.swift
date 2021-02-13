@@ -49,17 +49,26 @@ class CharacterListViewModelTests: XCTestCase {
         XCTAssertEqual(capturingCoordinator.selectedCharacter, characters[selectedIndex])
     }
     
-    func testOnCharactersManagerCallBackWarnsTheDelegate() {
+    func testOnCharactersManagerCallBackWarnsTheDelegateView() {
         let delegate = CaptuiringVMDelegate()
-        vm.delegate = delegate
+        vm.delegateView = delegate
         charactersManager.performCompletion()
         XCTAssertTrue(delegate.updateUICalled)
     }
     
-    func testDelegateIsNotRetained() {
-        var delegate: ListViewModelDelegate? = CaptuiringVMDelegate()
+    func testDelegateViewIsNotRetained() {
+        var delegate: ListViewModelDelegateView? = CaptuiringVMDelegate()
         weak var weakDelegate = delegate
-        vm.delegate = delegate
+        vm.delegateView = delegate
+        delegate = nil
+        
+        XCTAssertNil(weakDelegate)
+    }
+    
+    func testDelegateCoordinatorIsNotRetained() {
+        var delegate: ListViewModelDelegateCoordinator? = CapturingCoordinator()
+        weak var weakDelegate = delegate
+        vm.delegateCoordinator = delegate
         delegate = nil
         
         XCTAssertNil(weakDelegate)
@@ -98,11 +107,8 @@ class BrBaCharactersManager: CharactersManager{
     }
 }
 
-protocol Coordinator: class {
-    func showDetailViewControllerWith<T>(_ object: T)
-}
 
-class CapturingCoordinator: Coordinator {
+class CapturingCoordinator: ListViewModelDelegateCoordinator {
     var selectedCharacter: Character?
     
     func showDetailViewControllerWith<T>(_ object: T) {
@@ -120,7 +126,7 @@ extension Character: Equatable {
     }
 }
 
-class CaptuiringVMDelegate: ListViewModelDelegate {
+class CaptuiringVMDelegate: ListViewModelDelegateView {
     var updateUICalled = false
     func updateUI() {
         updateUICalled = true
@@ -129,14 +135,15 @@ class CaptuiringVMDelegate: ListViewModelDelegate {
 
 
 class CharactersListViewModel: ListViewModel {
-    weak var delegate: ListViewModelDelegate?
+    
+    weak var delegateView: ListViewModelDelegateView?
     let charactersManager: CharactersManager
-    weak var coordinator: Coordinator?
+    weak var delegateCoordinator: ListViewModelDelegateCoordinator?
     var characters: [Character] = []
     
-    init(charactersManager: CharactersManager = BrBaCharactersManager(), coordinator: Coordinator) {
+    init(charactersManager: CharactersManager = BrBaCharactersManager(), coordinator: ListViewModelDelegateCoordinator) {
         self.charactersManager = charactersManager
-        self.coordinator = coordinator
+        self.delegateCoordinator = coordinator
         updateCharacters()
     }
     
@@ -153,13 +160,13 @@ class CharactersListViewModel: ListViewModel {
     }
     
     func didSelectRow(_ index: Int) {
-        coordinator?.showDetailViewControllerWith(characters[index])
+        delegateCoordinator?.showDetailViewControllerWith(characters[index])
     }
     
     private func updateCharacters() {
         self.charactersManager.fetchCharacters { (characters) in
             self.characters = characters
-            self.delegate?.updateUI()
+            self.delegateView?.updateUI()
         }
     }
     

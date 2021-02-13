@@ -8,7 +8,8 @@
 import Foundation
 
 protocol ListViewModel: class {
-    var delegate: ListViewModelDelegate? {get set}
+    var delegateView: ListViewModelDelegateView? {get set}
+    var delegateCoordinator: ListViewModelDelegateCoordinator? {get set}
     
     func getTitle() -> String
     func getNumberOfRows() -> Int
@@ -17,6 +18,10 @@ protocol ListViewModel: class {
 }
 
 
-protocol ListViewModelDelegate: class {
+protocol ListViewModelDelegateView: class {
     func updateUI()
+}
+
+protocol ListViewModelDelegateCoordinator: class {
+    func showDetailViewControllerWith<T>(_ object: T)
 }

@@ -9,7 +9,11 @@ import Foundation
 @testable import BrBaTest
 
 class MockListViewModel: ListViewModel {
-    var delegate: ListViewModelDelegate?
+    var delegateView: ListViewModelDelegateView?
+    
+    var delegateCoordinator: ListViewModelDelegateCoordinator?
+    
+    var delegate: ListViewModelDelegateView?
     
     var stringList: [String]
     let title: String
