@@ -28,6 +28,7 @@
 		2C0D07D825D7DC4600B02A8C /* CapturingCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C0D07D725D7DC4600B02A8C /* CapturingCoordinator.swift */; };
 		2C0D07DD25D7DC6D00B02A8C /* CaptuiringVMDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C0D07DC25D7DC6D00B02A8C /* CaptuiringVMDelegate.swift */; };
 		2C0D07E225D7DC9E00B02A8C /* CharactersListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C0D07E125D7DC9E00B02A8C /* CharactersListViewModel.swift */; };
+		2C0D07E725D7DD0200B02A8C /* CharactersManagerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C0D07E625D7DD0200B02A8C /* CharactersManagerTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -75,6 +76,7 @@
 		2C0D07D725D7DC4600B02A8C /* CapturingCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CapturingCoordinator.swift; sourceTree = "<group>"; };
 		2C0D07DC25D7DC6D00B02A8C /* CaptuiringVMDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CaptuiringVMDelegate.swift; sourceTree = "<group>"; };
 		2C0D07E125D7DC9E00B02A8C /* CharactersListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharactersListViewModel.swift; sourceTree = "<group>"; };
+		2C0D07E625D7DD0200B02A8C /* CharactersManagerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharactersManagerTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -147,6 +149,7 @@
 				2C0D07A025D7414600B02A8C /* Mocks */,
 				2C0D074825D6FBC100B02A8C /* ListViewControllerTests.swift */,
 				2C0D07AC25D7420B00B02A8C /* CharacterListViewModelTests.swift */,
+				2C0D07E625D7DD0200B02A8C /* CharactersManagerTests.swift */,
 				2C0D074A25D6FBC100B02A8C /* Info.plist */,
 				2C0D076925D6FE5A00B02A8C /* TestingAppDelegate.swift */,
 				2C0D076E25D6FE6F00B02A8C /* TestingSceneDelegate.swift */,
@@ -369,6 +372,7 @@
 				2C0D074925D6FBC100B02A8C /* ListViewControllerTests.swift in Sources */,
 				2C0D076A25D6FE5A00B02A8C /* TestingAppDelegate.swift in Sources */,
 				2C0D07AD25D7420B00B02A8C /* CharacterListViewModelTests.swift in Sources */,
+				2C0D07E725D7DD0200B02A8C /* CharactersManagerTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

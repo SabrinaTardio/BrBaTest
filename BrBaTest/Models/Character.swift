@@ -7,6 +7,11 @@
 
 import Foundation
 
-struct Character: Equatable {
+struct Character:Codable, Equatable {
     let name: String
+    let occupation: [String]
+    let birthday: String
+    let status: String
+    let portrayed: String
+    let img: String
 }

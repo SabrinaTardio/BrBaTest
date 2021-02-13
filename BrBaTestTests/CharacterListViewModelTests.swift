@@ -78,6 +78,6 @@ class CharacterListViewModelTests: XCTestCase {
 
 extension Character {
     static func fixture(name: String = "SomeName") -> Character {
-        return Character(name: name)
+        return Character(name: name, occupation: [""], birthday: "", status: "", portrayed: "", img: "")
     }
 }
