@@ -9,10 +9,10 @@ import UIKit
 
 class ViewControllersFactory {
     
-    func makeListViewController(fruitListViewModel: ListViewModel) -> UIViewController {
+    func makeListViewController(listViewModel: ListViewModel) -> UIViewController {
         let storyboard: UIStoryboard = UIStoryboard(name: "Main", bundle:Bundle(for: type(of: self)))
         let listViewController = storyboard.instantiateViewController(identifier: "ListViewController") as! ListViewController
-        listViewController.viewModel = fruitListViewModel
+        listViewController.viewModel = listViewModel
         return listViewController
     }
     

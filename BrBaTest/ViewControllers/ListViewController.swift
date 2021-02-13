@@ -42,6 +42,7 @@ extension ListViewController: UITableViewDataSource {
 
 extension ListViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: true)
         viewModel?.didSelectRow(indexPath.row)
     }
 }
@@ -49,6 +50,8 @@ extension ListViewController: UITableViewDelegate {
 
 extension ListViewController: ViewModelDelegateView {
     func updateUI() {
-        listTableView.reloadData()
+        DispatchQueue.main.async {
+            self.listTableView.reloadData()
+        }
     }
 }

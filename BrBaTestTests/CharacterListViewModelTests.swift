@@ -64,7 +64,7 @@ class CharacterListViewModelTests: XCTestCase {
         XCTAssertNil(weakDelegate)
     }
     
-    func testDelegateCoordinatorIsNotRetained() {
+    func testDelegateCoordinatorRetained() {
         var delegate: ListViewModelDelegateCoordinator? = CapturingCoordinator()
         weak var weakDelegate = delegate
         vm.delegateCoordinator = delegate

@@ -20,7 +20,7 @@
 		2C0D076A25D6FE5A00B02A8C /* TestingAppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C0D076925D6FE5A00B02A8C /* TestingAppDelegate.swift */; };
 		2C0D076F25D6FE6F00B02A8C /* TestingSceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C0D076E25D6FE6F00B02A8C /* TestingSceneDelegate.swift */; };
 		2C0D077D25D704E300B02A8C /* ListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C0D077C25D704E300B02A8C /* ListViewModel.swift */; };
-		2C0D079925D70C4000B02A8C /* ListViewControllerFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C0D079825D70C4000B02A8C /* ListViewControllerFactory.swift */; };
+		2C0D079925D70C4000B02A8C /* ViewControllerFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C0D079825D70C4000B02A8C /* ViewControllerFactory.swift */; };
 		2C0D07A525D7416100B02A8C /* MockListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C0D07A425D7416100B02A8C /* MockListViewModel.swift */; };
 		2C0D07AD25D7420B00B02A8C /* CharacterListViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C0D07AC25D7420B00B02A8C /* CharacterListViewModelTests.swift */; };
 		2C0D07B925D7D98200B02A8C /* CharactersManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C0D07B825D7D98200B02A8C /* CharactersManager.swift */; };
@@ -55,6 +55,8 @@
 		2C29AE7625D83BFF006D438D /* QuoteDetailViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C29AE7525D83BFF006D438D /* QuoteDetailViewModelTests.swift */; };
 		2C29AE8125D83D19006D438D /* EpisodeDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C29AE8025D83D19006D438D /* EpisodeDetailViewModel.swift */; };
 		2C29AE8625D83D39006D438D /* QuoteDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C29AE8525D83D39006D438D /* QuoteDetailViewModel.swift */; };
+		2C29AE8C25D83DAE006D438D /* AppCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C29AE8B25D83DAE006D438D /* AppCoordinator.swift */; };
+		2C29AEE125D886DA006D438D /* Decoder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C29AEE025D886DA006D438D /* Decoder.swift */; };
 		2C881C7525D7EF900056CD3D /* Networking.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C881C7425D7EF900056CD3D /* Networking.swift */; };
 		2C881C7D25D7EFB60056CD3D /* CapturingNetworkingClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C881C7C25D7EFB60056CD3D /* CapturingNetworkingClient.swift */; };
 		2C881C8225D7EFE30056CD3D /* RemoteCharactersManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C881C8125D7EFE30056CD3D /* RemoteCharactersManager.swift */; };
@@ -99,7 +101,7 @@
 		2C0D076925D6FE5A00B02A8C /* TestingAppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestingAppDelegate.swift; sourceTree = "<group>"; };
 		2C0D076E25D6FE6F00B02A8C /* TestingSceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestingSceneDelegate.swift; sourceTree = "<group>"; };
 		2C0D077C25D704E300B02A8C /* ListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListViewModel.swift; sourceTree = "<group>"; };
-		2C0D079825D70C4000B02A8C /* ListViewControllerFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListViewControllerFactory.swift; sourceTree = "<group>"; };
+		2C0D079825D70C4000B02A8C /* ViewControllerFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewControllerFactory.swift; sourceTree = "<group>"; };
 		2C0D07A425D7416100B02A8C /* MockListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockListViewModel.swift; sourceTree = "<group>"; };
 		2C0D07AC25D7420B00B02A8C /* CharacterListViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterListViewModelTests.swift; sourceTree = "<group>"; };
 		2C0D07B825D7D98200B02A8C /* CharactersManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharactersManager.swift; sourceTree = "<group>"; };
@@ -134,6 +136,8 @@
 		2C29AE7525D83BFF006D438D /* QuoteDetailViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuoteDetailViewModelTests.swift; sourceTree = "<group>"; };
 		2C29AE8025D83D19006D438D /* EpisodeDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EpisodeDetailViewModel.swift; sourceTree = "<group>"; };
 		2C29AE8525D83D39006D438D /* QuoteDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuoteDetailViewModel.swift; sourceTree = "<group>"; };
+		2C29AE8B25D83DAE006D438D /* AppCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCoordinator.swift; sourceTree = "<group>"; };
+		2C29AEE025D886DA006D438D /* Decoder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Decoder.swift; sourceTree = "<group>"; };
 		2C881C7425D7EF900056CD3D /* Networking.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Networking.swift; sourceTree = "<group>"; };
 		2C881C7C25D7EFB60056CD3D /* CapturingNetworkingClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CapturingNetworkingClient.swift; sourceTree = "<group>"; };
 		2C881C8125D7EFE30056CD3D /* RemoteCharactersManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoteCharactersManager.swift; sourceTree = "<group>"; };
@@ -200,6 +204,7 @@
 		2C0D073025D6FBB400B02A8C /* BrBaTest */ = {
 			isa = PBXGroup;
 			children = (
+				2C29AE8A25D83D9D006D438D /* Coordinator */,
 				2C881C7325D7EF780056CD3D /* Networking */,
 				2C0D07CE25D7DBC200B02A8C /* Models */,
 				2C0D07B725D7D96500B02A8C /* DataManagers */,
@@ -290,7 +295,7 @@
 		2C0D07B625D7D94300B02A8C /* Factories */ = {
 			isa = PBXGroup;
 			children = (
-				2C0D079825D70C4000B02A8C /* ListViewControllerFactory.swift */,
+				2C0D079825D70C4000B02A8C /* ViewControllerFactory.swift */,
 			);
 			path = Factories;
 			sourceTree = "<group>";
@@ -299,11 +304,12 @@
 			isa = PBXGroup;
 			children = (
 				2C0D07B825D7D98200B02A8C /* CharactersManager.swift */,
-				2C881C8125D7EFE30056CD3D /* RemoteCharactersManager.swift */,
-				2C29ADC825D7F982006D438D /* EpisodesManager.swift */,
 				2C29ADEE25D800BE006D438D /* QuoteManager.swift */,
+				2C29ADC825D7F982006D438D /* EpisodesManager.swift */,
+				2C881C8125D7EFE30056CD3D /* RemoteCharactersManager.swift */,
 				2C29AE3725D82E88006D438D /* RemoteEpisodesManager.swift */,
 				2C29AE3C25D82EB0006D438D /* RemoteQuotesManager.swift */,
+				2C29AEE025D886DA006D438D /* Decoder.swift */,
 			);
 			path = DataManagers;
 			sourceTree = "<group>";
@@ -316,6 +322,14 @@
 				2C29ADE925D80099006D438D /* Quote.swift */,
 			);
 			path = Models;
+			sourceTree = "<group>";
+		};
+		2C29AE8A25D83D9D006D438D /* Coordinator */ = {
+			isa = PBXGroup;
+			children = (
+				2C29AE8B25D83DAE006D438D /* AppCoordinator.swift */,
+			);
+			path = Coordinator;
 			sourceTree = "<group>";
 		};
 		2C881C7325D7EF780056CD3D /* Networking */ = {
@@ -608,6 +622,7 @@
 			files = (
 				2C29ADD325D7F9D8006D438D /* EpisodesListViewModel.swift in Sources */,
 				2C0D07E225D7DC9E00B02A8C /* CharactersListViewModel.swift in Sources */,
+				2C29AE8C25D83DAE006D438D /* AppCoordinator.swift in Sources */,
 				2C29AE8625D83D39006D438D /* QuoteDetailViewModel.swift in Sources */,
 				2C29ADC425D7F963006D438D /* Episodes.swift in Sources */,
 				2C29AE3025D8278C006D438D /* DetailViewModel.swift in Sources */,
@@ -619,7 +634,7 @@
 				2C29AE3D25D82EB0006D438D /* RemoteQuotesManager.swift in Sources */,
 				2C29AE3825D82E88006D438D /* RemoteEpisodesManager.swift in Sources */,
 				2C0D07B925D7D98200B02A8C /* CharactersManager.swift in Sources */,
-				2C0D079925D70C4000B02A8C /* ListViewControllerFactory.swift in Sources */,
+				2C0D079925D70C4000B02A8C /* ViewControllerFactory.swift in Sources */,
 				2C29ADC925D7F982006D438D /* EpisodesManager.swift in Sources */,
 				2C29AE2625D82400006D438D /* DetailViewController.swift in Sources */,
 				2C0D073625D6FBB400B02A8C /* ListViewController.swift in Sources */,
@@ -627,6 +642,7 @@
 				2C0D073225D6FBB400B02A8C /* AppDelegate.swift in Sources */,
 				2C29ADB025D7F16A006D438D /* URLSessionNetworking.swift in Sources */,
 				2C0D076525D6FDC700B02A8C /* main.swift in Sources */,
+				2C29AEE125D886DA006D438D /* Decoder.swift in Sources */,
 				2C0D073425D6FBB400B02A8C /* SceneDelegate.swift in Sources */,
 				2C0D07D025D7DBD500B02A8C /* Character.swift in Sources */,
 				2C29ADEF25D800BE006D438D /* QuoteManager.swift in Sources */,

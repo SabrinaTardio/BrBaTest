@@ -18,7 +18,7 @@ class ListViewControllerTests: XCTestCase {
     override func setUp() {
         expectedStringArray = randomStringList()
         vm = MockListViewModel(stringList: expectedStringArray, title: expectedTitle)
-        vc = ViewControllersFactory().makeListViewController(fruitListViewModel: vm) as! ListViewController
+        vc = ViewControllersFactory().makeListViewController(listViewModel: vm) as! ListViewController
         vc.viewModel = vm
         vc.displayOnScreen()
     }

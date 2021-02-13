@@ -11,9 +11,3 @@ protocol CharactersManager {
     func fetchCharacters(completion: @escaping ([Character]) -> ())
 }
 
-
-class BrBaCharactersManager: CharactersManager{
-    func fetchCharacters(completion: @escaping ([Character]) -> ()) {
-        
-    }
-}

@@ -14,7 +14,7 @@ class CharactersListViewModel: ListViewModel {
     weak var delegateCoordinator: ListViewModelDelegateCoordinator?
     var characters: [Character] = []
     
-    init(charactersManager: CharactersManager = BrBaCharactersManager(), coordinator: ListViewModelDelegateCoordinator) {
+    init(charactersManager: CharactersManager, coordinator: ListViewModelDelegateCoordinator) {
         self.charactersManager = charactersManager
         self.delegateCoordinator = coordinator
         updateCharacters()
@@ -37,9 +37,9 @@ class CharactersListViewModel: ListViewModel {
     }
     
     private func updateCharacters() {
-        self.charactersManager.fetchCharacters { (characters) in
-            self.characters = characters
-            self.delegateView?.updateUI()
+        self.charactersManager.fetchCharacters {[weak self] (characters) in
+            self?.characters = characters
+            self?.delegateView?.updateUI()
         }
     }
     
