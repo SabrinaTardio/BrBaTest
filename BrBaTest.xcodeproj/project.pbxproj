@@ -22,6 +22,12 @@
 		2C0D079925D70C4000B02A8C /* ListViewControllerFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C0D079825D70C4000B02A8C /* ListViewControllerFactory.swift */; };
 		2C0D07A525D7416100B02A8C /* MockListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C0D07A425D7416100B02A8C /* MockListViewModel.swift */; };
 		2C0D07AD25D7420B00B02A8C /* CharacterListViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C0D07AC25D7420B00B02A8C /* CharacterListViewModelTests.swift */; };
+		2C0D07B925D7D98200B02A8C /* CharactersManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C0D07B825D7D98200B02A8C /* CharactersManager.swift */; };
+		2C0D07C125D7D99E00B02A8C /* MockCharactersManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C0D07C025D7D99E00B02A8C /* MockCharactersManager.swift */; };
+		2C0D07D025D7DBD500B02A8C /* Character.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C0D07CF25D7DBD500B02A8C /* Character.swift */; };
+		2C0D07D825D7DC4600B02A8C /* CapturingCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C0D07D725D7DC4600B02A8C /* CapturingCoordinator.swift */; };
+		2C0D07DD25D7DC6D00B02A8C /* CaptuiringVMDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C0D07DC25D7DC6D00B02A8C /* CaptuiringVMDelegate.swift */; };
+		2C0D07E225D7DC9E00B02A8C /* CharactersListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C0D07E125D7DC9E00B02A8C /* CharactersListViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -63,6 +69,12 @@
 		2C0D079825D70C4000B02A8C /* ListViewControllerFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListViewControllerFactory.swift; sourceTree = "<group>"; };
 		2C0D07A425D7416100B02A8C /* MockListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockListViewModel.swift; sourceTree = "<group>"; };
 		2C0D07AC25D7420B00B02A8C /* CharacterListViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterListViewModelTests.swift; sourceTree = "<group>"; };
+		2C0D07B825D7D98200B02A8C /* CharactersManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharactersManager.swift; sourceTree = "<group>"; };
+		2C0D07C025D7D99E00B02A8C /* MockCharactersManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockCharactersManager.swift; sourceTree = "<group>"; };
+		2C0D07CF25D7DBD500B02A8C /* Character.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Character.swift; sourceTree = "<group>"; };
+		2C0D07D725D7DC4600B02A8C /* CapturingCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CapturingCoordinator.swift; sourceTree = "<group>"; };
+		2C0D07DC25D7DC6D00B02A8C /* CaptuiringVMDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CaptuiringVMDelegate.swift; sourceTree = "<group>"; };
+		2C0D07E125D7DC9E00B02A8C /* CharactersListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharactersListViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -113,16 +125,18 @@
 		2C0D073025D6FBB400B02A8C /* BrBaTest */ = {
 			isa = PBXGroup;
 			children = (
+				2C0D07CE25D7DBC200B02A8C /* Models */,
+				2C0D07B725D7D96500B02A8C /* DataManagers */,
+				2C0D07B625D7D94300B02A8C /* Factories */,
+				2C0D07B525D7D93000B02A8C /* ViewModels */,
+				2C0D07B425D7D91B00B02A8C /* ViewControllers */,
 				2C0D073125D6FBB400B02A8C /* AppDelegate.swift */,
 				2C0D073325D6FBB400B02A8C /* SceneDelegate.swift */,
-				2C0D073525D6FBB400B02A8C /* ListViewController.swift */,
 				2C0D073725D6FBB400B02A8C /* Main.storyboard */,
 				2C0D073A25D6FBC100B02A8C /* Assets.xcassets */,
 				2C0D073C25D6FBC100B02A8C /* LaunchScreen.storyboard */,
 				2C0D073F25D6FBC100B02A8C /* Info.plist */,
 				2C0D076425D6FDC700B02A8C /* main.swift */,
-				2C0D077C25D704E300B02A8C /* ListViewModel.swift */,
-				2C0D079825D70C4000B02A8C /* ListViewControllerFactory.swift */,
 			);
 			path = BrBaTest;
 			sourceTree = "<group>";
@@ -153,8 +167,52 @@
 			isa = PBXGroup;
 			children = (
 				2C0D07A425D7416100B02A8C /* MockListViewModel.swift */,
+				2C0D07C025D7D99E00B02A8C /* MockCharactersManager.swift */,
+				2C0D07D725D7DC4600B02A8C /* CapturingCoordinator.swift */,
+				2C0D07DC25D7DC6D00B02A8C /* CaptuiringVMDelegate.swift */,
 			);
 			path = Mocks;
+			sourceTree = "<group>";
+		};
+		2C0D07B425D7D91B00B02A8C /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				2C0D073525D6FBB400B02A8C /* ListViewController.swift */,
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		2C0D07B525D7D93000B02A8C /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				2C0D077C25D704E300B02A8C /* ListViewModel.swift */,
+				2C0D07E125D7DC9E00B02A8C /* CharactersListViewModel.swift */,
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		2C0D07B625D7D94300B02A8C /* Factories */ = {
+			isa = PBXGroup;
+			children = (
+				2C0D079825D70C4000B02A8C /* ListViewControllerFactory.swift */,
+			);
+			path = Factories;
+			sourceTree = "<group>";
+		};
+		2C0D07B725D7D96500B02A8C /* DataManagers */ = {
+			isa = PBXGroup;
+			children = (
+				2C0D07B825D7D98200B02A8C /* CharactersManager.swift */,
+			);
+			path = DataManagers;
+			sourceTree = "<group>";
+		};
+		2C0D07CE25D7DBC200B02A8C /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				2C0D07CF25D7DBD500B02A8C /* Character.swift */,
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -287,12 +345,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2C0D07E225D7DC9E00B02A8C /* CharactersListViewModel.swift in Sources */,
 				2C0D077D25D704E300B02A8C /* ListViewModel.swift in Sources */,
+				2C0D07B925D7D98200B02A8C /* CharactersManager.swift in Sources */,
 				2C0D079925D70C4000B02A8C /* ListViewControllerFactory.swift in Sources */,
 				2C0D073625D6FBB400B02A8C /* ListViewController.swift in Sources */,
 				2C0D073225D6FBB400B02A8C /* AppDelegate.swift in Sources */,
 				2C0D076525D6FDC700B02A8C /* main.swift in Sources */,
 				2C0D073425D6FBB400B02A8C /* SceneDelegate.swift in Sources */,
+				2C0D07D025D7DBD500B02A8C /* Character.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -300,7 +361,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2C0D07D825D7DC4600B02A8C /* CapturingCoordinator.swift in Sources */,
+				2C0D07DD25D7DC6D00B02A8C /* CaptuiringVMDelegate.swift in Sources */,
 				2C0D07A525D7416100B02A8C /* MockListViewModel.swift in Sources */,
+				2C0D07C125D7D99E00B02A8C /* MockCharactersManager.swift in Sources */,
 				2C0D076F25D6FE6F00B02A8C /* TestingSceneDelegate.swift in Sources */,
 				2C0D074925D6FBC100B02A8C /* ListViewControllerTests.swift in Sources */,
 				2C0D076A25D6FE5A00B02A8C /* TestingAppDelegate.swift in Sources */,

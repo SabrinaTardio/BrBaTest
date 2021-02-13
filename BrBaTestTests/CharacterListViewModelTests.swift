@@ -20,7 +20,6 @@ class CharacterListViewModelTests: XCTestCase {
         charactersManager  = MockCharactersManager(charactersResponse: characters)
         capturingCoordinator = CapturingCoordinator()
         vm = CharactersListViewModel(charactersManager: charactersManager, coordinator: capturingCoordinator)
-//        vm = ListViewModelFactory(fruitManager: fruitManager).makeTableListViewModel(with: capturingCoordinator)
     }
     
     func testReturnsExpectedTitle() {
@@ -77,98 +76,8 @@ class CharacterListViewModelTests: XCTestCase {
 
 }
 
-
-
-protocol CharactersManager {
-    func fetchCharacters(completion: @escaping ([Character]) -> ())
-}
-
-class MockCharactersManager: CharactersManager {
-    var characters: [Character]
-    var completion: (([Character]) -> ())?
-    
-    init(charactersResponse: [Character] = []) {
-        self.characters = charactersResponse
-    }
-    
-    func fetchCharacters(completion: @escaping ([Character]) -> ()) {
-        self.completion = completion
-    }
-    
-    func performCompletion() {
-        completion!(characters)
-    }
-    
-}
-
-class BrBaCharactersManager: CharactersManager{
-    func fetchCharacters(completion: @escaping ([Character]) -> ()) {
-        
-    }
-}
-
-
-class CapturingCoordinator: ListViewModelDelegateCoordinator {
-    var selectedCharacter: Character?
-    
-    func showDetailViewControllerWith<T>(_ object: T) {
-        selectedCharacter = object as? Character
-    }
-}
-
-struct Character {
-    let name: String
-}
-
-extension Character: Equatable {
+extension Character {
     static func fixture(name: String = "SomeName") -> Character {
         return Character(name: name)
     }
-}
-
-class CaptuiringVMDelegate: ListViewModelDelegateView {
-    var updateUICalled = false
-    func updateUI() {
-        updateUICalled = true
-    }
-}
-
-
-class CharactersListViewModel: ListViewModel {
-    
-    weak var delegateView: ListViewModelDelegateView?
-    let charactersManager: CharactersManager
-    weak var delegateCoordinator: ListViewModelDelegateCoordinator?
-    var characters: [Character] = []
-    
-    init(charactersManager: CharactersManager = BrBaCharactersManager(), coordinator: ListViewModelDelegateCoordinator) {
-        self.charactersManager = charactersManager
-        self.delegateCoordinator = coordinator
-        updateCharacters()
-    }
-    
-    func getTitle() -> String {
-        return "Characters"
-    }
-    
-    func getNumberOfRows() -> Int {
-        return characters.count
-    }
-    
-    func getLabelTextFor(_ index: Int) -> String {
-        return characters[index].name
-    }
-    
-    func didSelectRow(_ index: Int) {
-        delegateCoordinator?.showDetailViewControllerWith(characters[index])
-    }
-    
-    private func updateCharacters() {
-        self.charactersManager.fetchCharacters { (characters) in
-            self.characters = characters
-            self.delegateView?.updateUI()
-        }
-    }
-    
-    
 }
