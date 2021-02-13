@@ -44,6 +44,9 @@
 		2C29ADF925D80104006D438D /* QuoteListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C29ADF825D80104006D438D /* QuoteListViewModel.swift */; };
 		2C29AE0525D80183006D438D /* EpisodesManagerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C29AE0425D80183006D438D /* EpisodesManagerTests.swift */; };
 		2C29AE1E25D807B9006D438D /* QuotesManagerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C29AE1D25D807B9006D438D /* QuotesManagerTests.swift */; };
+		2C29AE2625D82400006D438D /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C29AE2525D82400006D438D /* DetailViewController.swift */; };
+		2C29AE2B25D824F4006D438D /* DetailViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C29AE2A25D824F4006D438D /* DetailViewControllerTests.swift */; };
+		2C29AE3025D8278C006D438D /* DetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C29AE2F25D8278C006D438D /* DetailViewModel.swift */; };
 		2C881C7525D7EF900056CD3D /* Networking.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C881C7425D7EF900056CD3D /* Networking.swift */; };
 		2C881C7D25D7EFB60056CD3D /* CapturingNetworkingClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C881C7C25D7EFB60056CD3D /* CapturingNetworkingClient.swift */; };
 		2C881C8225D7EFE30056CD3D /* RemoteCharactersManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C881C8125D7EFE30056CD3D /* RemoteCharactersManager.swift */; };
@@ -112,6 +115,9 @@
 		2C29ADF825D80104006D438D /* QuoteListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuoteListViewModel.swift; sourceTree = "<group>"; };
 		2C29AE0425D80183006D438D /* EpisodesManagerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EpisodesManagerTests.swift; sourceTree = "<group>"; };
 		2C29AE1D25D807B9006D438D /* QuotesManagerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuotesManagerTests.swift; sourceTree = "<group>"; };
+		2C29AE2525D82400006D438D /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
+		2C29AE2A25D824F4006D438D /* DetailViewControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewControllerTests.swift; sourceTree = "<group>"; };
+		2C29AE2F25D8278C006D438D /* DetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewModel.swift; sourceTree = "<group>"; };
 		2C881C7425D7EF900056CD3D /* Networking.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Networking.swift; sourceTree = "<group>"; };
 		2C881C7C25D7EFB60056CD3D /* CapturingNetworkingClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CapturingNetworkingClient.swift; sourceTree = "<group>"; };
 		2C881C8125D7EFE30056CD3D /* RemoteCharactersManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoteCharactersManager.swift; sourceTree = "<group>"; };
@@ -200,6 +206,7 @@
 			children = (
 				2C0D07A025D7414600B02A8C /* Mocks */,
 				2C0D074825D6FBC100B02A8C /* ListViewControllerTests.swift */,
+				2C29AE2A25D824F4006D438D /* DetailViewControllerTests.swift */,
 				2C0D07AC25D7420B00B02A8C /* CharacterListViewModelTests.swift */,
 				2C29ADB425D7F359006D438D /* EpisodsListViewModelTests.swift */,
 				2C29ADD725D7FA54006D438D /* QuotesListViewModelTests.swift */,
@@ -241,6 +248,7 @@
 			isa = PBXGroup;
 			children = (
 				2C0D073525D6FBB400B02A8C /* ListViewController.swift */,
+				2C29AE2525D82400006D438D /* DetailViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -252,6 +260,7 @@
 				2C0D07E125D7DC9E00B02A8C /* CharactersListViewModel.swift */,
 				2C29ADD225D7F9D8006D438D /* EpisodesListViewModel.swift */,
 				2C29ADF825D80104006D438D /* QuoteListViewModel.swift */,
+				2C29AE2F25D8278C006D438D /* DetailViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -540,6 +549,7 @@
 				2C29ADD325D7F9D8006D438D /* EpisodesListViewModel.swift in Sources */,
 				2C0D07E225D7DC9E00B02A8C /* CharactersListViewModel.swift in Sources */,
 				2C29ADC425D7F963006D438D /* Episodes.swift in Sources */,
+				2C29AE3025D8278C006D438D /* DetailViewModel.swift in Sources */,
 				2C881C8225D7EFE30056CD3D /* RemoteCharactersManager.swift in Sources */,
 				2C29ADEA25D80099006D438D /* Quote.swift in Sources */,
 				2C881C7525D7EF900056CD3D /* Networking.swift in Sources */,
@@ -547,6 +557,7 @@
 				2C0D07B925D7D98200B02A8C /* CharactersManager.swift in Sources */,
 				2C0D079925D70C4000B02A8C /* ListViewControllerFactory.swift in Sources */,
 				2C29ADC925D7F982006D438D /* EpisodesManager.swift in Sources */,
+				2C29AE2625D82400006D438D /* DetailViewController.swift in Sources */,
 				2C0D073625D6FBB400B02A8C /* ListViewController.swift in Sources */,
 				2C29ADF925D80104006D438D /* QuoteListViewModel.swift in Sources */,
 				2C0D073225D6FBB400B02A8C /* AppDelegate.swift in Sources */,
@@ -567,6 +578,7 @@
 				2C881C7D25D7EFB60056CD3D /* CapturingNetworkingClient.swift in Sources */,
 				2C0D07D825D7DC4600B02A8C /* CapturingCoordinator.swift in Sources */,
 				2C0D07DD25D7DC6D00B02A8C /* CaptuiringVMDelegate.swift in Sources */,
+				2C29AE2B25D824F4006D438D /* DetailViewControllerTests.swift in Sources */,
 				2C29ADCE25D7F9AA006D438D /* MockEpisodesManager.swift in Sources */,
 				2C29ADF425D800DC006D438D /* MockQuotesManager.swift in Sources */,
 				2C0D07A525D7416100B02A8C /* MockListViewModel.swift in Sources */,

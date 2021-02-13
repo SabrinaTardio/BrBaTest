@@ -7,13 +7,20 @@
 
 import UIKit
 
-class ListViewControllersFactory {
+class ViewControllersFactory {
     
     func makeListViewController(fruitListViewModel: ListViewModel) -> UIViewController {
         let storyboard: UIStoryboard = UIStoryboard(name: "Main", bundle:Bundle(for: type(of: self)))
-        let fruitListViewController = storyboard.instantiateViewController(identifier: "ListViewController") as! ListViewController
-        fruitListViewController.viewModel = fruitListViewModel
-        return fruitListViewController
+        let listViewController = storyboard.instantiateViewController(identifier: "ListViewController") as! ListViewController
+        listViewController.viewModel = fruitListViewModel
+        return listViewController
+    }
+    
+    func makeDetailViewController(detailViewModel: DetailViewModel) -> UIViewController {
+        let storyboard: UIStoryboard = UIStoryboard(name: "Main", bundle:Bundle(for: type(of: self)))
+        let detailViewController = storyboard.instantiateViewController(identifier: "DetailViewController") as! DetailViewController
+        detailViewController.viewModel = detailViewModel
+        return detailViewController
     }
     
 }
