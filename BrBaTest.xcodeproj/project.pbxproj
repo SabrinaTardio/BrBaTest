@@ -43,6 +43,7 @@
 		2C29ADF425D800DC006D438D /* MockQuotesManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C29ADF325D800DC006D438D /* MockQuotesManager.swift */; };
 		2C29ADF925D80104006D438D /* QuoteListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C29ADF825D80104006D438D /* QuoteListViewModel.swift */; };
 		2C29AE0525D80183006D438D /* EpisodesManagerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C29AE0425D80183006D438D /* EpisodesManagerTests.swift */; };
+		2C29AE1E25D807B9006D438D /* QuotesManagerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C29AE1D25D807B9006D438D /* QuotesManagerTests.swift */; };
 		2C881C7525D7EF900056CD3D /* Networking.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C881C7425D7EF900056CD3D /* Networking.swift */; };
 		2C881C7D25D7EFB60056CD3D /* CapturingNetworkingClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C881C7C25D7EFB60056CD3D /* CapturingNetworkingClient.swift */; };
 		2C881C8225D7EFE30056CD3D /* RemoteCharactersManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C881C8125D7EFE30056CD3D /* RemoteCharactersManager.swift */; };
@@ -110,6 +111,7 @@
 		2C29ADF325D800DC006D438D /* MockQuotesManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockQuotesManager.swift; sourceTree = "<group>"; };
 		2C29ADF825D80104006D438D /* QuoteListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuoteListViewModel.swift; sourceTree = "<group>"; };
 		2C29AE0425D80183006D438D /* EpisodesManagerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EpisodesManagerTests.swift; sourceTree = "<group>"; };
+		2C29AE1D25D807B9006D438D /* QuotesManagerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuotesManagerTests.swift; sourceTree = "<group>"; };
 		2C881C7425D7EF900056CD3D /* Networking.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Networking.swift; sourceTree = "<group>"; };
 		2C881C7C25D7EFB60056CD3D /* CapturingNetworkingClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CapturingNetworkingClient.swift; sourceTree = "<group>"; };
 		2C881C8125D7EFE30056CD3D /* RemoteCharactersManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoteCharactersManager.swift; sourceTree = "<group>"; };
@@ -203,6 +205,7 @@
 				2C29ADD725D7FA54006D438D /* QuotesListViewModelTests.swift */,
 				2C0D07E625D7DD0200B02A8C /* CharactersManagerTests.swift */,
 				2C29AE0425D80183006D438D /* EpisodesManagerTests.swift */,
+				2C29AE1D25D807B9006D438D /* QuotesManagerTests.swift */,
 				2C29ADA725D7F11D006D438D /* NetworkingTests.swift */,
 				2C0D074A25D6FBC100B02A8C /* Info.plist */,
 				2C0D076925D6FE5A00B02A8C /* TestingAppDelegate.swift */,
@@ -572,6 +575,7 @@
 				2C0D074925D6FBC100B02A8C /* ListViewControllerTests.swift in Sources */,
 				2C29ADB525D7F359006D438D /* EpisodsListViewModelTests.swift in Sources */,
 				2C0D076A25D6FE5A00B02A8C /* TestingAppDelegate.swift in Sources */,
+				2C29AE1E25D807B9006D438D /* QuotesManagerTests.swift in Sources */,
 				2C0D07AD25D7420B00B02A8C /* CharacterListViewModelTests.swift in Sources */,
 				2C0D07E725D7DD0200B02A8C /* CharactersManagerTests.swift in Sources */,
 				2C29AE0525D80183006D438D /* EpisodesManagerTests.swift in Sources */,

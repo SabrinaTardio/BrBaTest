@@ -27,7 +27,7 @@ class EpisodesManagerTests: XCTestCase {
         XCTAssertEqual(expectedURLString, mockNetworking.capturedURLString)
     }
     
-    func testWhenCharactersFetched_CharactersIsGivenBack() {
+    func testWhenEpisodesFetched_EpisodesIsGivenBack() {
         let jsonString = "[{\"episode_id\":1,\"title\":\"Pilot\",\"season\":\"1\",\"air_date\":\"01-20-2008\",\"characters\":[\"Walter White\",\"Jesse Pinkman\",\"Skyler White\",\"Hank Schrader\",\"Marie Schrader\",\"Walter White Jr.\",\"Krazy-8\",\"Bogdan Wolynetz\"],\"episode\":\"1\",\"series\":\"Breaking Bad\"},{\"episode_id\":2,\"title\":\"Cat's in the Bag...\",\"season\":\"1\",\"air_date\":\"01-27-2008\",\"characters\":[\"Walter White\",\"Jesse Pinkman\",\"Skyler White\",\"Walter White Jr.\",\"Krazy-8\"],\"episode\":\"2\",\"series\":\"Breaking Bad\"}]"
         let jsonData = jsonString.data(using: .utf8)!
         let expectedEpisodes = [Episode(season: "1", episode: "1", title: "Pilot", air_date: "01-20-2008"), Episode(season: "1", episode: "2", title: "Cat's in the Bag...", air_date: "01-27-2008")]
@@ -42,7 +42,7 @@ class EpisodesManagerTests: XCTestCase {
         XCTAssertEqual(expectedEpisodes, actualEpisodes)
     }
     
-    func testWhenNetworkRequestFails_ReturnsEmptyCharactersArray() {
+    func testWhenNetworkRequestFails_ReturnsEmptyEpisodesArray() {
         let expectedEpisodes: [Episode] = []
         mockNetworking = CapturingNetworkingClient(response: .failure(NSError()))
         episodesManager = RemoteEpisodesManager(networking: mockNetworking, url: expectedURL)
@@ -53,7 +53,7 @@ class EpisodesManagerTests: XCTestCase {
         
         XCTAssertEqual(expectedEpisodes, actualEpisodes)    }
     
-    func testWhenParsingFails_ReturnsEmptyCharactersArray() {
+    func testWhenParsingFails_ReturnsEmptyEpisodesArray() {
         let jsonString = "{some invalid json}"
         let jsonData = jsonString.data(using: .utf8)!
         var actualEpisodes: [Episode]?
@@ -74,7 +74,7 @@ class RemoteEpisodesManager: EpisodesManager {
     let networking: Networking
     let url: URL
     
-    init(networking: Networking, url: URL = URL(string: "https://www.breakingbadapi.com/api/characters")!) {
+    init(networking: Networking, url: URL = URL(string: "https://www.breakingbadapi.com/api/episodes")!) {
         self.networking = networking
         self.url = url
     }

@@ -7,6 +7,8 @@
 
 import Foundation
 
-struct Quote: Equatable {
-    let id: Int
+struct Quote: Equatable, Codable {
+    let quote_id: Int
+    let quote: String
+    let author: String
 }

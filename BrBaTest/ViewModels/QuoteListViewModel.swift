@@ -30,7 +30,7 @@ class QuotesListViewModel: ListViewModel {
     }
     
     func getLabelTextFor(_ index: Int) -> String {
-        return "Quote \(quotes[index].id)"
+        return "Quote \(quotes[index].quote_id)"
     }
     
     func didSelectRow(_ index: Int) {

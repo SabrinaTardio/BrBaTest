@@ -37,7 +37,7 @@ class QuotesListViewModelTests: XCTestCase {
         quotesManager.performCompletion()
         let selectedIndex = Int.random(in: 0..<quotes.count)
         let actualLabelText = vm.getLabelTextFor(selectedIndex)
-        let expectedLabel = "Quote \(quotes[selectedIndex].id)"
+        let expectedLabel = "Quote \(quotes[selectedIndex].quote_id)"
         XCTAssertEqual(actualLabelText, expectedLabel)
     }
 
@@ -81,7 +81,7 @@ class QuotesListViewModelTests: XCTestCase {
 
 extension Quote {
     static func fixture(id: Int = 1) -> Quote {
-        return Quote(id: id)
+        return Quote(quote_id: id, quote: "", author: "")
     }
 }
 
