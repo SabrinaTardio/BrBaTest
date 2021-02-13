@@ -10,8 +10,10 @@ import Foundation
 
 class CapturingCoordinator: ListViewModelDelegateCoordinator {
     var selectedCharacter: Character?
+    var selectedEpisode: Episode?
     
     func showDetailViewControllerWith<T>(_ object: T) {
         selectedCharacter = object as? Character
+        selectedEpisode = object as? Episode
     }
 }
