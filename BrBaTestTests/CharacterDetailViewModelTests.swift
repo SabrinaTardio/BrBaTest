@@ -56,55 +56,7 @@ class CharacterDetailViewModelTests: XCTestCase {
         XCTAssertEqual(img, actualUrl)
     }
     
-//    func testReturnsCorrectDetail1Text() {
-//        let weightString = String(format: "%.3f", weight)
-//        let expectedDetail1 = "Weight: \(weightString) Kg"
-//        let actualDetail1 = vm.getDetail1Text()
-//        XCTAssertEqual(expectedDetail1, actualDetail1)
-//    }
-//
-//    func testReturnsCorrectDetail2Text() {
-//        let priceString = String(format: "%.2f", price)
-//        let expectedDetail2 = "Price: \(priceString) £"
-//        let actualDetail2 = vm.getDetail2Text()
-//        XCTAssertEqual(expectedDetail2, actualDetail2)
-//    }
-
 }
 
 
-class CharacterDetailViewModel: DetailViewModel {
-    let character: Character
-    var delegateView: ViewModelDelegateView?
-    
-    init(character: Character) {
-        self.character = character
-    }
-    
-    func getDetail1Text() -> String {
-        return "NAME: \(character.name)"
-    }
-    
-    func getDetail2Text() -> String {
-        let occupationsString = character.occupation.joined(separator: ", ")
-        return "OCCUPATIONS: \(occupationsString)"
-    }
-    
-    func getDetail3Text() -> String {
-        return "BIRTHDAY: \(character.birthday)"
-    }
-    
-    func getDetail4Text() -> String {
-        return "STATUS: \(character.status)"
-    }
-    
-    func getDetail5Text() -> String {
-        return "PORTRAYED: \(character.portrayed)"
-    }
-    
-    func getImageUrlString() -> String {
-        return character.img
-    }
-    
-    
-}
+
