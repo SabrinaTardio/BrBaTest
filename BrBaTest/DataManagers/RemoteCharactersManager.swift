@@ -22,7 +22,7 @@ class RemoteCharactersManager: CharactersManager {
         networking.get(url) {(result) in
             switch result {
             case .success(let data):
-                completion(decoder.decode(data: data))
+                completion(self.decoder.decode(data: data))
             case .failure(_):
                 completion([Character]())
             }
