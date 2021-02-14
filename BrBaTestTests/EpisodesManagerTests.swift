@@ -21,7 +21,7 @@ class EpisodesManagerTests: XCTestCase {
         episodesManager = RemoteEpisodesManager(networking: mockNetworking, url: expectedURL)
     }
     
-    func testWhenFruitFetched_URLRequestWithCorrectURL() {
+    func testWhenEpisodeFetched_URLRequestWithCorrectURL() {
         episodesManager.fetchEpisodes() { _ in }
         
         XCTAssertEqual(expectedURLString, mockNetworking.capturedURLString)
