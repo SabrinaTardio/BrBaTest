@@ -7,7 +7,7 @@
 
 import Foundation
 
-class ViewModelsFactory {
+struct ViewModelsFactory: ListViewModelFactory, DetailViewModelFactory {
     let charactersManager: CharactersManager
     let episodesManager: EpisodesManager
     let quotesManager: QuotesManager
@@ -44,9 +44,19 @@ class ViewModelsFactory {
         return detailVM
     }
     
-    enum ViewModelType {
-        case characters
-        case episodes
-        case quotes
-    }
+}
+
+
+protocol ListViewModelFactory {
+    func makeListViewModel(viewModelType: ViewModelType, coordinator: ListViewModelDelegateCoordinator)  -> ListViewModel
+}
+
+protocol DetailViewModelFactory {
+    func makeDetailViewModel<T>(object: T) -> DetailViewModel
+}
+
+enum ViewModelType {
+    case characters
+    case episodes
+    case quotes
 }

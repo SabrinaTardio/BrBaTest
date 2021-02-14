@@ -7,7 +7,7 @@
 
 import UIKit
 
-class ViewControllersFactory {
+class ViewControllersFactory: ListViewControllerFactory, DetailViewControllerFactory {
     
     func makeListViewController(listViewModel: ListViewModel) -> UIViewController {
         let storyboard: UIStoryboard = UIStoryboard(name: "Main", bundle:Bundle(for: type(of: self)))
@@ -23,4 +23,12 @@ class ViewControllersFactory {
         return detailViewController
     }
     
+}
+
+protocol ListViewControllerFactory{
+    func makeListViewController(listViewModel: ListViewModel) -> UIViewController
+}
+
+protocol DetailViewControllerFactory{
+    func makeDetailViewController(detailViewModel: DetailViewModel) -> UIViewController
 }

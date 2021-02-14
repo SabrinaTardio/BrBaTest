@@ -38,9 +38,9 @@ class QuotesListViewModel: ListViewModel {
     }
     
     private func updateQuotes() {
-        self.quotesManager.fetchQuotes { (quotes) in
-            self.quotes = quotes
-            self.delegateView?.updateUI()
+        self.quotesManager.fetchQuotes {[weak self] (quotes) in
+            self?.quotes = quotes
+            self?.delegateView?.updateUI()
         }
     }
     

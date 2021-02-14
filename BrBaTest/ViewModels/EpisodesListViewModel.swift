@@ -37,9 +37,9 @@ class EpisodesListViewModel: ListViewModel {
     }
     
     private func updateEpisodes() {
-        self.episodesManager.fetchEpisodes(completion: { (episodes) in
-            self.episodes = episodes
-            self.delegateView?.updateUI()
+        self.episodesManager.fetchEpisodes(completion: {[weak self] (episodes) in
+            self?.episodes = episodes
+            self?.delegateView?.updateUI()
         })
     }
     

@@ -7,7 +7,7 @@
 
 import Foundation
 
-class EpisodeDetailViewModel: DetailViewModel {
+struct EpisodeDetailViewModel: DetailViewModel {
     let episode: Episode
     
     init(episode: Episode) {

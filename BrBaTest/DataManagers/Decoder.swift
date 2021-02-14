@@ -11,7 +11,7 @@ protocol Decoder {
     func decode<T: Codable>(data: Data) -> [T]
 }
 
-class DecoderJson: Decoder {
+struct DecoderJson: Decoder {
     func decode<T: Codable>(data: Data) -> [T] {
         let decoder = JSONDecoder()
         var objects = [T]()

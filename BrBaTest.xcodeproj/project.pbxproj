@@ -58,6 +58,7 @@
 		2C29AE8C25D83DAE006D438D /* AppCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C29AE8B25D83DAE006D438D /* AppCoordinator.swift */; };
 		2C29AEE125D886DA006D438D /* Decoder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C29AEE025D886DA006D438D /* Decoder.swift */; };
 		2C29AEEE25D8B042006D438D /* ViewModelsFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C29AEED25D8B042006D438D /* ViewModelsFactory.swift */; };
+		2C29AEF325D8B992006D438D /* CoordinatorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C29AEF225D8B992006D438D /* CoordinatorTests.swift */; };
 		2C881C7525D7EF900056CD3D /* Networking.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C881C7425D7EF900056CD3D /* Networking.swift */; };
 		2C881C7D25D7EFB60056CD3D /* CapturingNetworkingClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C881C7C25D7EFB60056CD3D /* CapturingNetworkingClient.swift */; };
 		2C881C8225D7EFE30056CD3D /* RemoteCharactersManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C881C8125D7EFE30056CD3D /* RemoteCharactersManager.swift */; };
@@ -140,6 +141,7 @@
 		2C29AE8B25D83DAE006D438D /* AppCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCoordinator.swift; sourceTree = "<group>"; };
 		2C29AEE025D886DA006D438D /* Decoder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Decoder.swift; sourceTree = "<group>"; };
 		2C29AEED25D8B042006D438D /* ViewModelsFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModelsFactory.swift; sourceTree = "<group>"; };
+		2C29AEF225D8B992006D438D /* CoordinatorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoordinatorTests.swift; sourceTree = "<group>"; };
 		2C881C7425D7EF900056CD3D /* Networking.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Networking.swift; sourceTree = "<group>"; };
 		2C881C7C25D7EFB60056CD3D /* CapturingNetworkingClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CapturingNetworkingClient.swift; sourceTree = "<group>"; };
 		2C881C8125D7EFE30056CD3D /* RemoteCharactersManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoteCharactersManager.swift; sourceTree = "<group>"; };
@@ -240,6 +242,7 @@
 				2C29AE6025D83538006D438D /* CharacterDetailViewModelTests.swift */,
 				2C29AE6D25D83A2D006D438D /* EpisodeDetailViewModelTests.swift */,
 				2C29AE7525D83BFF006D438D /* QuoteDetailViewModelTests.swift */,
+				2C29AEF225D8B992006D438D /* CoordinatorTests.swift */,
 				2C0D074A25D6FBC100B02A8C /* Info.plist */,
 				2C0D076925D6FE5A00B02A8C /* TestingAppDelegate.swift */,
 				2C0D076E25D6FE6F00B02A8C /* TestingSceneDelegate.swift */,
@@ -672,6 +675,7 @@
 				2C0D076F25D6FE6F00B02A8C /* TestingSceneDelegate.swift in Sources */,
 				2C0D074925D6FBC100B02A8C /* ListViewControllerTests.swift in Sources */,
 				2C29AE7625D83BFF006D438D /* QuoteDetailViewModelTests.swift in Sources */,
+				2C29AEF325D8B992006D438D /* CoordinatorTests.swift in Sources */,
 				2C29ADB525D7F359006D438D /* EpisodsListViewModelTests.swift in Sources */,
 				2C0D076A25D6FE5A00B02A8C /* TestingAppDelegate.swift in Sources */,
 				2C29AE1E25D807B9006D438D /* QuotesManagerTests.swift in Sources */,

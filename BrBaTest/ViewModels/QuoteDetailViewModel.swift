@@ -7,7 +7,7 @@
 
 import Foundation
 
-class QuoteDetailViewModel: DetailViewModel {
+struct QuoteDetailViewModel: DetailViewModel {
     let quote: Quote
     
     init(quote: Quote) {

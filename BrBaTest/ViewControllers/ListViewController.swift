@@ -50,8 +50,8 @@ extension ListViewController: UITableViewDelegate {
 
 extension ListViewController: ViewModelDelegateView {
     func updateUI() {
-        DispatchQueue.main.async {
-            self.listTableView.reloadData()
+        DispatchQueue.main.async {[weak self] in
+            self?.listTableView.reloadData()
         }
     }
 }

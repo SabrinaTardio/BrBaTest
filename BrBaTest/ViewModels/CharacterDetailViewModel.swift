@@ -7,7 +7,7 @@
 
 import Foundation
 
-class CharacterDetailViewModel: DetailViewModel {
+struct CharacterDetailViewModel: DetailViewModel {
     let character: Character
     
     init(character: Character) {

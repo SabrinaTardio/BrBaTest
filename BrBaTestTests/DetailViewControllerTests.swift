@@ -57,9 +57,9 @@ class DetailViewControllerTests: XCTestCase {
         XCTAssertEqual(expectedDetail5, actualdetail5)
     }
     
-    func testUploadImage() {
-        //ToDo
-    }
+//    func testUploadImage() {
+//        //ToDo
+//    }
     
 }
 

@@ -7,7 +7,7 @@
 
 import Foundation
 
-class RemoteQuotesManager: QuotesManager {
+struct RemoteQuotesManager: QuotesManager {
     let networking: Networking
     let url: URL
     let decoder: Decoder
@@ -19,10 +19,10 @@ class RemoteQuotesManager: QuotesManager {
     }
     
     func fetchQuotes(completion: @escaping ([Quote]) -> ()) {
-        networking.get(url) { (result) in
+        networking.get(url) {(result) in
             switch result {
             case .success(let data):
-                completion(self.decoder.decode(data: data))
+                completion(decoder.decode(data: data))
             case .failure(_):
                 completion([Quote]())
             }

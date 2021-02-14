@@ -7,7 +7,7 @@
 
 import Foundation
 
-class RemoteCharactersManager: CharactersManager {
+struct RemoteCharactersManager: CharactersManager {
     let networking: Networking
     let url: URL
     let decoder: Decoder
@@ -22,7 +22,7 @@ class RemoteCharactersManager: CharactersManager {
         networking.get(url) {(result) in
             switch result {
             case .success(let data):
-                completion(self.decoder.decode(data: data))
+                completion(decoder.decode(data: data))
             case .failure(_):
                 completion([Character]())
             }
