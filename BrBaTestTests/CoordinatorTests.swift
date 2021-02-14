@@ -5,6 +5,8 @@
 //  Created by Sabrina Tardio on 14/02/2021.
 //
 
+// Not complete did not have time
+
 import XCTest
 @testable import BrBaTest
 
@@ -32,5 +34,6 @@ class CoordinatorTests: XCTestCase {
     }
     
 
-
+//TODO: Rewrite coordinator properly
+    
 }

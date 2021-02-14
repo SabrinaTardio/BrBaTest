@@ -7,6 +7,8 @@
 
 import UIKit
 
+//Did not TDD it so is a bit messy needs split in multiple coordinator etc... Not enough time
+
 protocol Coordinator {
     func start()
 }
