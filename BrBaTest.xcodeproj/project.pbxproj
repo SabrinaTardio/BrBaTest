@@ -57,6 +57,7 @@
 		2C29AE8625D83D39006D438D /* QuoteDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C29AE8525D83D39006D438D /* QuoteDetailViewModel.swift */; };
 		2C29AE8C25D83DAE006D438D /* AppCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C29AE8B25D83DAE006D438D /* AppCoordinator.swift */; };
 		2C29AEE125D886DA006D438D /* Decoder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C29AEE025D886DA006D438D /* Decoder.swift */; };
+		2C29AEEE25D8B042006D438D /* ViewModelsFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C29AEED25D8B042006D438D /* ViewModelsFactory.swift */; };
 		2C881C7525D7EF900056CD3D /* Networking.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C881C7425D7EF900056CD3D /* Networking.swift */; };
 		2C881C7D25D7EFB60056CD3D /* CapturingNetworkingClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C881C7C25D7EFB60056CD3D /* CapturingNetworkingClient.swift */; };
 		2C881C8225D7EFE30056CD3D /* RemoteCharactersManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C881C8125D7EFE30056CD3D /* RemoteCharactersManager.swift */; };
@@ -138,6 +139,7 @@
 		2C29AE8525D83D39006D438D /* QuoteDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuoteDetailViewModel.swift; sourceTree = "<group>"; };
 		2C29AE8B25D83DAE006D438D /* AppCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCoordinator.swift; sourceTree = "<group>"; };
 		2C29AEE025D886DA006D438D /* Decoder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Decoder.swift; sourceTree = "<group>"; };
+		2C29AEED25D8B042006D438D /* ViewModelsFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModelsFactory.swift; sourceTree = "<group>"; };
 		2C881C7425D7EF900056CD3D /* Networking.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Networking.swift; sourceTree = "<group>"; };
 		2C881C7C25D7EFB60056CD3D /* CapturingNetworkingClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CapturingNetworkingClient.swift; sourceTree = "<group>"; };
 		2C881C8125D7EFE30056CD3D /* RemoteCharactersManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoteCharactersManager.swift; sourceTree = "<group>"; };
@@ -296,6 +298,7 @@
 			isa = PBXGroup;
 			children = (
 				2C0D079825D70C4000B02A8C /* ViewControllerFactory.swift */,
+				2C29AEED25D8B042006D438D /* ViewModelsFactory.swift */,
 			);
 			path = Factories;
 			sourceTree = "<group>";
@@ -645,6 +648,7 @@
 				2C29AEE125D886DA006D438D /* Decoder.swift in Sources */,
 				2C0D073425D6FBB400B02A8C /* SceneDelegate.swift in Sources */,
 				2C0D07D025D7DBD500B02A8C /* Character.swift in Sources */,
+				2C29AEEE25D8B042006D438D /* ViewModelsFactory.swift in Sources */,
 				2C29ADEF25D800BE006D438D /* QuoteManager.swift in Sources */,
 				2C29AE8125D83D19006D438D /* EpisodeDetailViewModel.swift in Sources */,
 			);

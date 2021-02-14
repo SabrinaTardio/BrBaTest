@@ -7,22 +7,25 @@
 
 import UIKit
 
+protocol Coordinator {
+    func start()
+}
+
 class AppCoordinator: Coordinator {
     
     let window: UIWindow
     let vcFactory = ViewControllersFactory()
+    let vmFactory: ViewModelsFactory
     var tabBar: UITabBarController?
-    let networking = URLSessionNetworking()
-    let charactersManager: RemoteCharactersManager!
-    let episodeManager: RemoteEpisodesManager!
-    let quotesManager: QuotesManager!
-    
+
     
     init(window: UIWindow) {
         self.window = window
-        self.charactersManager = RemoteCharactersManager(networking: networking)
-        self.episodeManager = RemoteEpisodesManager(networking: networking)
-        self.quotesManager = RemoteQuotesManager(networking: networking)
+        let networking = URLSessionNetworking()
+        let charactersManager = RemoteCharactersManager(networking: networking)
+        let episodesManager = RemoteEpisodesManager(networking: networking)
+        let quotesManager = RemoteQuotesManager(networking: networking)
+        self.vmFactory = ViewModelsFactory(charactersManager: charactersManager, episodesManager: episodesManager, quotesManager: quotesManager)
     }
     
     
@@ -47,7 +50,7 @@ class AppCoordinator: Coordinator {
         let navController = UINavigationController()
         navController.navigationBar.prefersLargeTitles = true
         navController.navigationBar.tintColor = .black
-        let charListVM = CharactersListViewModel(charactersManager: charactersManager, coordinator: self)
+        let charListVM = vmFactory.makeListViewModel(viewModelType: .characters, coordinator: self)
         let vc = vcFactory.makeListViewController(listViewModel: charListVM)
         navController.viewControllers = [vc]
         return navController
@@ -57,7 +60,7 @@ class AppCoordinator: Coordinator {
         let navController = UINavigationController()
         navController.navigationBar.prefersLargeTitles = true
         navController.navigationBar.tintColor = .black
-        let episodesListVM = EpisodesListViewModel(episodesManager: episodeManager, coordinator: self)
+        let episodesListVM = vmFactory.makeListViewModel(viewModelType: .episodes, coordinator: self)
         let vc = vcFactory.makeListViewController(listViewModel: episodesListVM)
         navController.viewControllers = [vc]
         return navController
@@ -67,34 +70,16 @@ class AppCoordinator: Coordinator {
         let navController = UINavigationController()
         navController.navigationBar.prefersLargeTitles = true
         navController.navigationBar.tintColor = .black
-        let quotesListVM = QuotesListViewModel(quotesManager: quotesManager, coordinator: self)
+        let quotesListVM = vmFactory.makeListViewModel(viewModelType: .quotes, coordinator: self)
         let vc = vcFactory.makeListViewController(listViewModel: quotesListVM)
         navController.viewControllers = [vc]
         return navController
     }
-    
-  
-    
 }
-
-protocol Coordinator {
-    func showDetailViewControllerWith<T>(_ object: T)
-}
-
 
 extension AppCoordinator: ListViewModelDelegateCoordinator {
     func showDetailViewControllerWith<T>(_ object: T) {
-        var detailVM: DetailViewModel
-        switch object {
-        case is Character:
-            detailVM = CharacterDetailViewModel(character: object as! Character)
-        case is Episode:
-            detailVM = EpisodeDetailViewModel(episode: object as! Episode)
-        case is Quote:
-            detailVM = QuoteDetailViewModel(quote: object as! Quote)
-        default:
-            return
-        }
+        let detailVM = vmFactory.makeDetailViewModel(object: object)
         let vc = vcFactory.makeDetailViewController(detailViewModel: detailVM)
         let currentViewController = tabBar?.selectedViewController
         currentViewController?.show(vc, sender: currentViewController)

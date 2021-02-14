@@ -19,10 +19,10 @@ class RemoteCharactersManager: CharactersManager {
     }
     
     func fetchCharacters(completion: @escaping ([Character]) -> ()) {
-        networking.get(url) {[weak self] (result) in
+        networking.get(url) {(result) in
             switch result {
             case .success(let data):
-                completion(self?.decoder.decode(data: data) ?? [Character]())
+                completion(decoder.decode(data: data))
             case .failure(_):
                 completion([Character]())
             }
